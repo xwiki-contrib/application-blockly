@@ -31,7 +31,7 @@
   <artifactId>application-blockly</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Blockly</name>
-  <packaging>xar</packaging>
+  <packaging>pom</packaging>
   <description>Adds support for Blockly code editor</description>
   <scm>
     <connection>scm:git:git://github.com/xwiki-contrib/application-blockly.git</connection>
@@ -58,4 +58,7 @@
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>BLOCKLY</xwiki.issueManagement.jira.id>
   </properties>
+  <modules>
+    <module>application-blockly-ui</module>
+  </modules>
 </project>

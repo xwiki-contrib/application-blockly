@@ -25,29 +25,11 @@
   <parent>
     <groupId>org.xwiki.contrib</groupId>
     <artifactId>application-blockly</artifactId>
-    <version>8.4-6</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-blockly-ui</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Blockly</name>
   <packaging>xar</packaging>
-  <description>Adds support for Blockly code editor</description>
-  <properties>
-    <!-- Don't check for API backward-compatibility here since there's no Java code. -->
-    <xwiki.clirr.skip>true</xwiki.clirr.skip>
-
-    <!-- The Extension name. If not defined, the <name> property is used -->
-    <xwiki.extension.name>application-blockly</xwiki.extension.name>
-
-    <!-- The extension's category -->
-    <xwiki.extension.category>application</xwiki.extension.category>
-
-    <!-- Issue management -->
-    <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
-    <xwiki.issueManagement.jira.id>BLOCKLY</xwiki.issueManagement.jira.id>
-  </properties>
-  <modules>>
-    <module>application-blockly-ui</module>
-  </modules>
 </project>
