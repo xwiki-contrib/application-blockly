@@ -24,26 +24,15 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.xwiki.contrib</groupId>
-    <artifactId>parent-platform</artifactId>
+    <artifactId>application-blockly</artifactId>
     <version>8.4-6</version>
   </parent>
   <groupId>org.xwiki.contrib</groupId>
-  <artifactId>application-blockly</artifactId>
+  <artifactId>application-blockly-ui</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>Blockly</name>
   <packaging>xar</packaging>
   <description>Adds support for Blockly code editor</description>
-  <scm>
-    <connection>scm:git:git://github.com/xwiki-contrib/application-blockly.git</connection>
-    <developerConnection>scm:git:git@github.com:xwiki-contrib/application-blockly.git</developerConnection>
-    <url>https://github.com/xwiki-contrib/application-blockly</url>
-  </scm>
-  <developers>
-    <developer>
-      <id>Remorax</id>
-      <name>Vivek Iyer</name>
-    </developer>
-  </developers>
   <properties>
     <!-- Don't check for API backward-compatibility here since there's no Java code. -->
     <xwiki.clirr.skip>true</xwiki.clirr.skip>
@@ -58,4 +47,7 @@
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>BLOCKLY</xwiki.issueManagement.jira.id>
   </properties>
+  <modules>>
+    <module>application-blockly-ui</module>
+  </modules>
 </project>

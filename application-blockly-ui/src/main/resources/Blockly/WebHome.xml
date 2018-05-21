@@ -19,8 +19,8 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="BlocklyEditorApplication.WebHome" locale="">
-  <web>BlocklyEditorApplication</web>
+<xwikidoc version="1.3" reference="Blockly.WebHome" locale="">
+  <web>Blockly</web>
   <name>WebHome</name>
   <language/>
   <defaultLanguage/>
@@ -39,7 +39,7 @@
   <hidden>false</hidden>
   <content/>
   <object>
-    <name>BlocklyEditorApplication.WebHome</name>
+    <name>Blockly.WebHome</name>
     <number>0</number>
     <className>XWiki.UIExtensionClass</className>
     <guid>0f52d439-a893-490a-bc73-7f51d8fa7205</guid>
