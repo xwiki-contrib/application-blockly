@@ -1,5 +1,4 @@
 # Google Blockly Editor
-=====================
 
 Adds a code editor using Google Blockly
 
@@ -11,4 +10,4 @@ Adds a code editor using Google Blockly
 * License: LGPL 2.1+ 
 * Translations: N/A
 * Sonar Dashboard: N/A 
-* Continuous Integration Status: N/A 
+* Continuous Integration Status: [![Build Status](http://ci.xwiki.org/job/XWiki%20Contrib/job/application-blockly/job/master/badge/icon)](http://ci.xwiki.org/job/XWiki%20Contrib/job/application-blockly/job/master/)

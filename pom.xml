@@ -25,11 +25,11 @@
   <parent>
     <groupId>org.xwiki.contrib</groupId>
     <artifactId>parent-platform</artifactId>
-    <version>8.4-6</version>
+    <version>9.11-5</version>
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-blockly</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.1-SNAPSHOT</version>
   <name>Blockly - Parent POM</name>
   <packaging>pom</packaging>
   <description>Adds a new editor based on Google Blockly</description>
@@ -45,8 +45,6 @@
     </developer>
   </developers>
   <properties>
-    <!-- Don't check for API backward-compatibility here since there's no Java code. -->
-    <xwiki.clirr.skip>true</xwiki.clirr.skip>
 
     <!-- The Extension name. If not defined, the <name> property is used -->
     <xwiki.extension.name>application-blockly</xwiki.extension.name>
