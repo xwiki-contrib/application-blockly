@@ -35,4 +35,18 @@
     <xwiki.extension.name>Blockly Editor</xwiki.extension.name>
     <xwiki.extension.category>application</xwiki.extension.category>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-webjars-api</artifactId>
+      <version>${platform.version}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>blockly</artifactId>
+      <version>7679d22</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
 </project>
