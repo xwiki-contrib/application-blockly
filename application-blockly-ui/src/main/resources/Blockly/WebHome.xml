@@ -32,7 +32,7 @@
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <date>1526896422000</date>
-  <contentUpdateDate>1527144728000</contentUpdateDate>
+  <contentUpdateDate>1527518492000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -138,16 +138,18 @@
   }
 });
 
+
 require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'js-comp', 'jquery', 'media'], function(blockly, blocks, msg, js, $, media) {
   var demoWorkspace = Blockly.inject('blocklyDiv',
   {media: media,
   toolbox: document.getElementById('toolbox')});
-  $('#show').click(function() {
+
+  $('#show').click(function(e) {
     Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-    var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-    debugger;
-    console.log(code);
-    $('#blocklyCode').html(code);
+    var code = Blockly.JavaScript.workspaceToCode(demoWorkspace), element = $('#blocklyCode');
+    e.preventDefault();
+    var caretPos = element[0].selectionStart, currentValue = element.val();
+    element.val(currentValue.substring(0, caretPos) + code + currentValue.substring(caretPos));
   });
 
   $('#run').click(function() {
@@ -250,7 +252,10 @@ require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'js-comp', 'jquery', '
     <property>
       <content>{{velocity}}{{html clean="false"}} ## we need clean="false" because we want to display the raw content of #submenuitem()
  #template('menus_macros.vm')
- #submenuitem('http://localhost:8080/xwiki/bin/view/Blockly/Editor/', 'Blockly', 'blockly.editactions', '', 'bricks')
+#set($url=$xwiki.getDocument('Blockly.Editor').getURL())
+#set($param="?location=$doc.web")
+#set($finalURL="${url}${param}")
+#submenuitem($finalURL, 'Blockly', 'blockly.editactions', '', 'bricks')
 {{/html}}{{/velocity}}</content>
     </property>
     <property>

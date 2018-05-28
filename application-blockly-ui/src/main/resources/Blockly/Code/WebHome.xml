@@ -32,7 +32,7 @@
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
   <date>1527161526000</date>
-  <contentUpdateDate>1527161525000</contentUpdateDate>
+  <contentUpdateDate>1527520114000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -43,6 +43,15 @@
 
 {{velocity}}
 #set($discard = $xwiki.jsx.use('Blockly.WebHome'))
+#set($loc = "$request.getParameter('location')")
+#set ($locList = $loc.split("\."))
+#set($paths = [])
+#foreach( $locElem in $locList )
+  #set($bool = $paths.add("$locElem"))
+#end
+#set($docRef   = $services.model.createDocumentReference('', $paths,"WebHome"))
+#set($document = $xwiki.getDocument($docRef))
+
 {{html  clean="false"}}
 &lt;p&gt;
   &lt;button id="show"&gt;Show JavaScript&lt;/button&gt;
@@ -54,7 +63,7 @@
       &lt;div id="blocklyDiv" style="height: 480px; width: 500px; display:inline-block"&gt;&lt;/div&gt;
     &lt;/td&gt;
     &lt;td&gt;
-      &lt;div id="blocklyCode" style="margin-left: 200px; height: 480px; width: 200px;"&gt;&lt;/div&gt;
+      &lt;textarea cols="60" rows="23" id="blocklyCode"&gt;$document.getContent()&lt;/textarea&gt;
     &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
