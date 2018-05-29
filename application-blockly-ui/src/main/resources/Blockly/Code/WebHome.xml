@@ -43,14 +43,10 @@
 
 {{velocity}}
 #set($discard = $xwiki.jsx.use('Blockly.WebHome'))
-#set($loc = "$request.getParameter('location')")
-#set ($locList = $loc.split("\."))
-#set($paths = [])
-#foreach( $locElem in $locList )
-  #set($bool = $paths.add("$locElem"))
-#end
-#set($docRef   = $services.model.createDocumentReference('', $paths,"WebHome"))
-#set($document = $xwiki.getDocument($docRef))
+#set($loc = "$request.location")
+#set($refParam = "xwiki:${loc}.WebHome")
+#set($ref = $services.model.resolveDocument($refParam))
+#set($document = $xwiki.getDocument($ref))
 
 {{html  clean="false"}}
 &lt;p&gt;

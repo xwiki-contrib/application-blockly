@@ -252,9 +252,9 @@ require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'js-comp', 'jquery', '
     <property>
       <content>{{velocity}}{{html clean="false"}} ## we need clean="false" because we want to display the raw content of #submenuitem()
  #template('menus_macros.vm')
-#set($url=$xwiki.getDocument('Blockly.Editor').getURL())
-#set($param="?location=$doc.web")
-#set($finalURL="${url}${param}")
+#set($url = $xwiki.getURL('Blockly.Editor'))
+#set($param = "?location=$doc.web")
+#set($finalURL = "${url}${param}")
 #submenuitem($finalURL, 'Blockly', 'blockly.editactions', '', 'bricks')
 {{/html}}{{/velocity}}</content>
     </property>
