@@ -43,8 +43,7 @@
 
 {{velocity}}
 #set($discard = $xwiki.jsx.use('Blockly.WebHome'))
-#set($loc = "$request.location")
-#set($refParam = "xwiki:${loc}.WebHome")
+#set($refParam = "$request.docRef")
 #set($ref = $services.model.resolveDocument($refParam))
 #set($document = $xwiki.getDocument($ref))
 
