@@ -56,16 +56,17 @@
   &lt;button id="show"&gt;Show JavaScript&lt;/button&gt;
   &lt;button id="run"&gt;Run JavaScript&lt;/button&gt;
 &lt;/p&gt;
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;
-      &lt;div id="blocklyDiv" style="height: 480px; width: 500px; display:inline-block"&gt;&lt;/div&gt;
-    &lt;/td&gt;
-    &lt;td&gt;
-      &lt;textarea cols="60" rows="23" id="content" name="content" form="edit"&gt;$document.getContent()&lt;/textarea&gt;
-    &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
+&lt;form id="edit" method="post" action="$xwiki.getURL("$refParam","preview")" class="withLock form"&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;div id="blocklyDiv" style="height: 480px; width: 500px; display:inline-block"&gt;&lt;/div&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        &lt;textarea cols="60" rows="23" id="content" name="content" form="edit"&gt;$document.getContent()&lt;/textarea&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
 
 
   &lt;xml id="toolbox" style="display: none"&gt;
@@ -99,25 +100,18 @@
       &lt;block type="text_print"&gt;&lt;/block&gt;
     &lt;/category&gt;
   &lt;/xml&gt;
-  &lt;form id="edit" method="post" action="$xwiki.getURL("$refParam","preview")" class="withLock form"&gt;
-    &lt;div class="hidden"&gt;
-        &lt;input type="hidden" name="form_token" value="$!{services.csrf.getToken()}" /&gt;
-        &lt;input type="hidden" name="x-maximized" value="$!{escapetool.xml($request.get('x-maximized'))}"/&gt;
-        &lt;input type="hidden" name="xcontinue" value="$xcontinue"/&gt;
-        &lt;input type="hidden" name="comment" value="$!{escapetool.xml($request.comment)}"/&gt;
-        &lt;input type="hidden" name="language" value="$!tdoc.realLocale" /&gt;    
-        &lt;input type="hidden" name="xeditaction" value="$!xcontext.action" /&gt;
-    &lt;/div&gt;
-    &lt;div class="buttons"&gt;
-        #editActionButton('preview', 'preview', 'btn-info')
-        #editActionButton('saveandcontinue', 'saveandcontinue', 'btn-primary')
-        #editActionButton("save", 'saveandview', 'btn-success')
-        #editActionButton('cancel', 'cancel', 'btn-default')
-      &lt;/div&gt;
-    &lt;div class="meta-versionSummary metamodifs"&gt;
-      
-    &lt;/div&gt;
-  &lt;/form&gt;
+
+  &lt;div class="hidden"&gt;
+      &lt;input type="hidden" name="form_token" value="$!{services.csrf.getToken()}" /&gt;
+      &lt;input type="hidden" name="x-maximized" value="$!{escapetool.xml($request.get('x-maximized'))}"/&gt;
+      &lt;input type="hidden" name="xcontinue" value="$xcontinue"/&gt;
+      &lt;input type="hidden" name="comment" value="$!{escapetool.xml($request.comment)}"/&gt;
+      &lt;input type="hidden" name="language" value="$!tdoc.realLocale" /&gt;    
+      &lt;input type="hidden" name="xeditaction" value="$!xcontext.action" /&gt;
+  &lt;/div&gt;
+
+  #template('editactions.vm')
+&lt;/form&gt;
 {{/html}}
 {{/velocity}}</content>
   <object>
