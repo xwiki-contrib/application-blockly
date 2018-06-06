@@ -36,7 +36,7 @@
   <scm>
     <connection>scm:git:git://github.com/xwiki-contrib/application-blockly.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-blockly.git</developerConnection>
-    <url>https://github.com/xwiki-contrib/application-blockly/tree/master</url>
+    <url>https://github.com/xwiki-contrib/application-blockly</url>
   </scm>
   <developers>
     <developer>
