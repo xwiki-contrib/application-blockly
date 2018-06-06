@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-blockly</artifactId>
-  <version>0.1</version>
+  <version>0.2-SNAPSHOT</version>
   <name>Blockly - Parent POM</name>
   <packaging>pom</packaging>
   <description>Adds a new editor based on Google Blockly</description>
