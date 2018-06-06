@@ -43,13 +43,9 @@
 
 {{velocity}}
 #set($discard = $xwiki.jsx.use('Blockly.WebHome'))
-#set($discard = $xwiki.ssx.use('Blockly.WebHome'))
 #set($refParam = "$request.docRef")
 #set($ref = $services.model.resolveDocument($refParam))
 #set($document = $xwiki.getDocument($ref))
-#macro(editActionButton $action $resourceIdentifier $class)
-#submitButton("action_${action}", $services.localization.render("core.shortcuts.edit.${resourceIdentifier}"), $services.localization.render($resourceIdentifier), $class)
-#end
 
 {{html  clean="false"}}
 &lt;p&gt;
@@ -63,7 +59,7 @@
         &lt;div id="blocklyDiv" style="height: 480px; width: 500px; display:inline-block"&gt;&lt;/div&gt;
       &lt;/td&gt;
       &lt;td&gt;
-        &lt;textarea cols="60" rows="23" id="content" name="content" form="edit"&gt;$document.getContent()&lt;/textarea&gt;
+        &lt;textarea cols="60" rows="23" id="content" name="content"&gt;$document.getContent()&lt;/textarea&gt;
       &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/table&gt;
