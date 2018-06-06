@@ -45,14 +45,6 @@
     </developer>
   </developers>
   <properties>
-
-    <!-- The Extension name. If not defined, the <name> property is used -->
-    <xwiki.extension.name>application-blockly</xwiki.extension.name>
-
-    <!-- The extension's category -->
-    <xwiki.extension.category>application</xwiki.extension.category>
-
-    <!-- Issue management -->
     <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
     <xwiki.issueManagement.jira.id>BLOCKLY</xwiki.issueManagement.jira.id>
   </properties>
