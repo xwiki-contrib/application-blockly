@@ -20,8 +20,8 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Blockly.BlocklyTemplate.WebHome" locale="">
-  <web>Blockly</web>
+<xwikidoc version="1.3" reference="Blockly.Code.BlocklyTemplate.WebHome" locale="">
+  <web>Blockly.Code</web>
   <name>BlocklyTemplate</name>
   <parent>Main.WebHome</parent>
   <language/>
@@ -38,7 +38,7 @@
   <comment/>
   <minorEdit>false</minorEdit>
   <syntaxId>xwiki/2.1</syntaxId>
-  <hidden>false</hidden>
+  <hidden>true</hidden>
   <content/>
   <object>
     <name>Blockly.BlocklyTemplate.WebHome</name>
