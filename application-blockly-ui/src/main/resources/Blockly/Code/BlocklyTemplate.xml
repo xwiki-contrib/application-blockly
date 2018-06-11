@@ -20,19 +20,19 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 -->
 
-<xwikidoc version="1.3" reference="Blockly.Code.BlocklyTemplate.WebHome" locale="">
+<xwikidoc version="1.3" reference="Blockly.Code.BlocklyTemplate" locale="">
   <web>Blockly.Code</web>
   <name>BlocklyTemplate</name>
-  <parent>Main.WebHome</parent>
   <language/>
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1528569249000</creationDate>
+  <creationDate>1528749352000</creationDate>
+  <parent>xwiki:Blockly.Code.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1528725150000</date>
-  <contentUpdateDate>1528719598000</contentUpdateDate>
+  <date>1528755236000</date>
+  <contentUpdateDate>1528749352000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -41,12 +41,12 @@
   <hidden>true</hidden>
   <content/>
   <object>
-    <name>Blockly.BlocklyTemplate.WebHome</name>
+    <name>Blockly.Code.BlocklyTemplate</name>
     <number>0</number>
-    <className>Blockly.BlocklyClass</className>
-    <guid>19ddfd92-5db5-432b-84fc-e1e7cee2e534</guid>
+    <className>Blockly.Code.BlocklyClass</className>
+    <guid>6e157a4a-86fd-485b-9c86-f0874b6fca7b</guid>
     <class>
-      <name>Blockly.BlocklyClass</name>
+      <name>Blockly.Code.BlocklyClass</name>
       <customClass/>
       <customMapping/>
       <defaultViewSheet/>
