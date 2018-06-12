@@ -29,7 +29,7 @@
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-blockly</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.3</version>
   <name>Blockly - Parent POM</name>
   <packaging>pom</packaging>
   <description>Adds a new document template based on Google Blockly</description>
@@ -37,7 +37,7 @@
     <connection>scm:git:git://github.com/xwiki-contrib/application-blockly.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-blockly.git</developerConnection>
     <url>https://github.com/xwiki-contrib/application-blockly</url>
-    <tag>application-blockly-0.1</tag>
+    <tag>application-blockly-0.3</tag>
   </scm>
   <developers>
     <developer>

@@ -25,7 +25,7 @@
   <parent>
     <groupId>org.xwiki.contrib</groupId>
     <artifactId>application-blockly</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.3</version>
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-blockly-ui</artifactId>
@@ -49,4 +49,8 @@
       <scope>runtime</scope>
     </dependency>
   </dependencies>
+
+  <scm>
+    <tag>application-blockly-0.3</tag>
+  </scm>
 </project>
