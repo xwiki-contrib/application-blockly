@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
@@ -31,7 +30,7 @@
   <parent>XWiki.TemplateProviderClass</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1528755248000</date>
+  <date>1528813292000</date>
   <contentUpdateDate>1528753165000</contentUpdateDate>
   <version>1.1</version>
   <title>BlocklyTemplateProvider</title>
@@ -238,13 +237,13 @@
       <creationRestrictionsAreSuggestions>0</creationRestrictionsAreSuggestions>
     </property>
     <property>
-      <description>A Blockly template</description>
+      <description>Write scripts using the visual Blockly block editor</description>
     </property>
     <property>
       <icon>cubes</icon>
     </property>
     <property>
-      <name>Blockly Template</name>
+      <name>Blockly</name>
     </property>
     <property>
       <spaces/>

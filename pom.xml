@@ -29,10 +29,10 @@
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-blockly</artifactId>
-  <version>0.3-SNAPSHOT</version>
+  <version>0.2-SNAPSHOT</version>
   <name>Blockly - Parent POM</name>
   <packaging>pom</packaging>
-  <description>Adds a new editor based on Google Blockly</description>
+  <description>Adds a new document template based on Google Blockly</description>
   <scm>
     <connection>scm:git:git://github.com/xwiki-contrib/application-blockly.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-blockly.git</developerConnection>
