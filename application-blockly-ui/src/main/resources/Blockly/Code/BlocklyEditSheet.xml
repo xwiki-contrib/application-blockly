@@ -30,7 +30,7 @@
   <parent>xwiki:Blockly.Code.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1528812971000</date>
+  <date>1528816709000</date>
   <contentUpdateDate>1528812555000</contentUpdateDate>
   <version>1.1</version>
   <title>BlocklyEditSheet</title>
@@ -227,7 +227,9 @@ require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'js-comp', 'jquery', '
     $(document).on('xwiki:actions:beforeSave', function() {
       var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
       var xml_text = Blockly.Xml.domToText(xml);
+      var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
       $('#Blockly\\.Code\\.BlocklyClass_0_code').val(xml_text);
+      $('#Blockly\\.Code\\.BlocklyClass_0_content').val(code);
   });
 });
 </code>
