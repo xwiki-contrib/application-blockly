@@ -203,6 +203,7 @@ require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'js-comp', 'jquery', '
   toolbox: document.getElementById('toolbox')});
   $( document ).ready(function() {
       var xmlText = $('#Blockly\\.Code\\.BlocklyClass_0_code').val();
+      $("[title='Maximize']").hide();
       var xml = Blockly.Xml.textToDom(xmlText);
       Blockly.Xml.appendDomToWorkspace(xml, demoWorkspace);
   });
@@ -215,6 +216,7 @@ require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'js-comp', 'jquery', '
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       if(e.target['id']=='source-tab'){
         $('#blocklyDiv').hide();
+        $("[title='Maximize']").show();
         Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
         var code = Blockly.JavaScript.workspaceToCode(demoWorkspace), element = $('#Blockly\\.Code\\.BlocklyClass_0_content');
         element.val(code);
@@ -222,6 +224,7 @@ require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'js-comp', 'jquery', '
       }
       else if(e.target['id']=='blockly-tab'){
         $('#blocklyDiv').show();
+        $("[title='Maximize']").hide();
         $('#Blockly\\.Code\\.BlocklyClass_0_content').hide();
       }
     })
