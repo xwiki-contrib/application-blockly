@@ -344,8 +344,8 @@ require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'js-comp', 'jquery', '
     <property>
       <code>#blocklyDiv {
     height: 600px;
-    width: 800px;
-    padding: 25px 150px;
+    width: 100%;
+    padding: 25px 0px;
 }
 
 #Blockly\.Code\.BlocklyClass_0_content{
