@@ -53,9 +53,7 @@
     {{/code}}
 
     {{html clean="false" }}
-      &lt;div id="runCode" style="text-align:center"&gt;
-        &lt;button id="run"&gt;Run Code&lt;/button&gt;
-       &lt;/div&gt;
+      &lt;input type="button" id="run" class="button" value="Run Code"&gt;&lt;/input&gt;
      {{/html}}
     #end
 
