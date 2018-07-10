@@ -43,9 +43,9 @@
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>org.webjars</groupId>
+      <groupId>org.xwiki.contrib</groupId>
       <artifactId>blockly</artifactId>
-      <version>7679d22</version>
+      <version>0.1</version>
       <scope>runtime</scope>
     </dependency>
   </dependencies>

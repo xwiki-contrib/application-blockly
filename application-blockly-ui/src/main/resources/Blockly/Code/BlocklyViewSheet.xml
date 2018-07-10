@@ -27,12 +27,12 @@
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1528749613000</creationDate>
+  <creationDate>1531223172000</creationDate>
   <parent>xwiki:Blockly.Code.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1528830304000</date>
-  <contentUpdateDate>1528830304000</contentUpdateDate>
+  <date>1531235746000</date>
+  <contentUpdateDate>1531235746000</contentUpdateDate>
   <version>1.1</version>
   <title>BlocklyViewSheet</title>
   <comment/>
@@ -45,10 +45,10 @@
     #if ($doc.getObject('Blockly.Code.BlocklyClass'))
 
     {{html clean="false" }}
-      &lt;div style="display:none;" id="contentInp"&gt;$doc.getObject('Blockly.Code.BlocklyClass').getProperty('content').value&lt;/div&gt;
+      &lt;div style="display:none;" id="contentInp"&gt;$doc.getObject('Blockly.Code.BlocklyClass').getProperty('CodeJS').value&lt;/div&gt;
     {{/html}}
 
-    {{code language="javascript"}}
+    {{code language="velocity"}}
        $doc.getObject('Blockly.Code.BlocklyClass').getProperty('content').value
     {{/code}}
 
@@ -142,16 +142,18 @@
     <property>
       <code>require.config({
   paths: {
-    'blockly-comp': '$services.webjars.url("blockly", "blockly_compressed.js")',
-    'js-comp': '$services.webjars.url("blockly", "javascript_compressed.js")',
+    'blockly-comp': '$services.webjars.url("org.xwiki.contrib:blockly", "blockly_compressed.js")',
+    'vel-comp': '$services.webjars.url("org.xwiki.contrib:blockly", "velocity_compressed.js")',
+    'js-comp': '$services.webjars.url("org.xwiki.contrib:blockly", "javascript_compressed.js")',
     'jquery': '$services.webjars.url("jquery", "jquery.js")'
   },
   shim: {
+    'vel-comp': ['blockly-comp'],
     'js-comp': ['blockly-comp']
   }
 });
 
-require(['js-comp', 'jquery', 'blockly-comp'], function(jscomp,$,blockly) {
+require(['vel-comp', 'jquery', 'blockly-comp', 'js-comp'], function(velcomp,$,blockly,jscomp) {
 
   $('#run').click(function() {
     var code = $('#contentInp').html();
@@ -160,6 +162,7 @@ require(['js-comp', 'jquery', 'blockly-comp'], function(jscomp,$,blockly) {
     Blockly.JavaScript.INFINITE_LOOP_TRAP =
       'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
     Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+    console.log(code);
     try {
       eval(code);
     } catch (e) {

@@ -27,12 +27,12 @@
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1528749542000</creationDate>
+  <creationDate>1531223172000</creationDate>
   <parent>WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1528828773000</date>
-  <contentUpdateDate>1528749542000</contentUpdateDate>
+  <date>1531235759000</date>
+  <contentUpdateDate>1531223172000</contentUpdateDate>
   <version>1.1</version>
   <title/>
   <comment/>
@@ -49,6 +49,23 @@
     <defaultWeb/>
     <nameField/>
     <validationScript/>
+    <CodeJS>
+      <contenttype>PureText</contenttype>
+      <customDisplay/>
+      <disabled>0</disabled>
+      <editor>PureText</editor>
+      <hint/>
+      <name>CodeJS</name>
+      <number>3</number>
+      <picker>0</picker>
+      <prettyName>CodeJS</prettyName>
+      <rows>30</rows>
+      <size>100</size>
+      <unmodifiable>0</unmodifiable>
+      <validationMessage/>
+      <validationRegExp/>
+      <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+    </CodeJS>
     <code>
       <contenttype>PureText</contenttype>
       <customDisplay/>
@@ -101,7 +118,6 @@
       <sheet>
         <customDisplay/>
         <disabled>0</disabled>
-        <hint/>
         <name>sheet</name>
         <number>1</number>
         <picker>0</picker>
