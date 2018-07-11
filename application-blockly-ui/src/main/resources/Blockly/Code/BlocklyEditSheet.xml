@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
@@ -27,12 +26,12 @@
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1531223172000</creationDate>
+  <creationDate>1531236960000</creationDate>
   <parent>xwiki:Blockly.Code.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1531235735000</date>
-  <contentUpdateDate>1531235735000</contentUpdateDate>
+  <date>1531295942000</date>
+  <contentUpdateDate>1531255419000</contentUpdateDate>
   <version>1.1</version>
   <title>BlocklyEditSheet</title>
   <comment/>
@@ -81,6 +80,7 @@
             &lt;/block&gt;
             &lt;block type="controls_forEach"&gt;&lt;/block&gt;
           &lt;/category&gt;
+          &lt;category name="Variables" custom="VARIABLE" colour="200"&gt;&lt;/category&gt;
           &lt;category name="Math" colour="230"&gt;
             &lt;block type="math_number"&gt;
               &lt;field name="NUM"&gt;123&lt;/field&gt;
@@ -292,9 +292,6 @@
               &lt;/value&gt;
             &lt;/block&gt;
           &lt;/category&gt;
-          &lt;sep&gt;&lt;/sep&gt;
-          &lt;category name="Variables" custom="VARIABLE" colour="200"&gt;&lt;/category&gt;
-          &lt;category name="Functions" custom="PROCEDURE" colour="180"&gt;&lt;/category&gt;
         &lt;/xml&gt;
       &lt;/form&gt;
     #end
@@ -403,7 +400,7 @@
 });
 
 
-require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'vel-comp', 'jquery', 'media', 'bootstrap', 'js-comp'], function(blockly, blocks, msg, vel, $, media, bootstrap, js) {
+require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'vel-comp', 'jquery', 'media', 'bootstrap', 'js-comp','blockly-accessible'], function(blockly, blocks, msg, vel, $, media, bootstrap, js, access) {
   var demoWorkspace = Blockly.inject('blocklyDiv',
   {media: media,
   toolbox: document.getElementById('toolbox')});

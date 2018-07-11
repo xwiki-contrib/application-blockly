@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!--
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
@@ -27,12 +26,12 @@
   <defaultLanguage/>
   <translation>0</translation>
   <creator>xwiki:XWiki.Admin</creator>
-  <creationDate>1531223172000</creationDate>
+  <creationDate>1531236960000</creationDate>
   <parent>xwiki:Blockly.Code.WebHome</parent>
   <author>xwiki:XWiki.Admin</author>
   <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
-  <date>1531235746000</date>
-  <contentUpdateDate>1531235746000</contentUpdateDate>
+  <date>1531307243000</date>
+  <contentUpdateDate>1531307243000</contentUpdateDate>
   <version>1.1</version>
   <title>BlocklyViewSheet</title>
   <comment/>
@@ -44,17 +43,21 @@
 
     #if ($doc.getObject('Blockly.Code.BlocklyClass'))
 
-    {{html clean="false" }}
-      &lt;div style="display:none;" id="contentInp"&gt;$doc.getObject('Blockly.Code.BlocklyClass').getProperty('CodeJS').value&lt;/div&gt;
-    {{/html}}
+      {{html clean="false" }}
+        &lt;div style="display:none;" id="contentInp"&gt;$doc.getObject('Blockly.Code.BlocklyClass').getProperty('CodeJS').value&lt;/div&gt;
+      {{/html}}
 
-    {{code language="velocity"}}
-       $doc.getObject('Blockly.Code.BlocklyClass').getProperty('content').value
-    {{/code}}
-
-    {{html clean="false" }}
-      &lt;input type="button" id="run" class="button" value="Run Code"&gt;&lt;/input&gt;
-     {{/html}}
+      #if ("$!request.evaluate" == "true")
+        {{include reference="Blockly.Code.BlocklyExecuteCodeSheet" /}}
+        {{html clean="false" }}
+          &lt;input type="button" id="view" class="button" value="View Code"&gt;&lt;/input&gt;
+       {{/html}}
+      #else
+        {{include reference="Blockly.Code.BlocklyViewCodeSheet" /}}
+        {{html clean="false" }}
+          &lt;input type="button" id="run" class="button" value="Run Code"&gt;&lt;/input&gt;
+       {{/html}}
+      #end
     #end
 
 {{/velocity}}</content>
@@ -154,20 +157,28 @@
 });
 
 require(['vel-comp', 'jquery', 'blockly-comp', 'js-comp'], function(velcomp,$,blockly,jscomp) {
+   $('#run').click(function() {
+     var loc = window.location.href;
+     if(loc[loc.length - 1] == '/')
+        loc = loc.slice(0,-1)
+     var re = new RegExp("([?&amp;])" + "evaluate" + "=.*?(&amp;|$)", "i");
+     var separator = loc.indexOf('?') !== -1 ? "&amp;" : "?";
+     if (loc.match(re))
+       window.location.href = loc.replace(re, '$1' + "evaluate=true" + '$2');
+     else
+       window.location.href = loc + separator + "evaluate=true";
+  });
 
-  $('#run').click(function() {
-    var code = $('#contentInp').html();
-    code = code.replace(/&amp;lt;/g,'&lt;').replace(/&amp;gt;/g, '&gt;');
-    window.LoopTrap = 1000;
-    Blockly.JavaScript.INFINITE_LOOP_TRAP =
-      'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
-    Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-    console.log(code);
-    try {
-      eval(code);
-    } catch (e) {
-      alert(e);
-    }
+  $('#view').click(function() {
+     var loc = window.location.href;
+     if(loc[loc.length - 1] == '/')
+        loc = loc.slice(0,-1)
+     var re = new RegExp("([?&amp;])" + "evaluate" + "=.*?(&amp;|$)", "i");
+     var separator = loc.indexOf('?') !== -1 ? "&amp;" : "?";
+     if (loc.match(re))
+       window.location.href = loc.replace(re, '$1' + "evaluate=false" + '$2');
+     else
+       window.location.href = loc + separator + "evaluate=false";
   });
 });</code>
     </property>
