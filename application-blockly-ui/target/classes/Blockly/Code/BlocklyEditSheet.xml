@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.3" reference="Blockly.Code.BlocklyEditSheet" locale="">
+  <web>Blockly.Code</web>
+  <name>BlocklyEditSheet</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1531236960000</creationDate>
+  <parent>xwiki:Blockly.Code.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1531295942000</date>
+  <contentUpdateDate>1531255419000</contentUpdateDate>
+  <version>1.1</version>
+  <title>BlocklyEditSheet</title>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>true</hidden>
+  <content>{{velocity}}
+  #set($discard = $xwiki.jsx.use('Blockly.Code.BlocklyEditSheet'))
+  #set($discard = $xwiki.ssx.use('Blockly.Code.BlocklyEditSheet'))
+
+  {{html  clean="false"}}
+    #if ($doc.getObject('Blockly.Code.BlocklyClass'))
+      &lt;ul class="nav nav-tabs" id="myTabs" role="tablist"&gt;
+        &lt;li role="presentation" class="active"&gt;
+          &lt;a href="#blockly" aria-controls="blockly" id="blockly-tab" role="tab" data-toggle="tab"&gt;Blockly&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li role="presentation"&gt;
+          &lt;a href="#source" aria-controls="source" id="source-tab" role="tab" data-toggle="tab"&gt;Source&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;form id="edit" method="post" action="$xwiki.getURL("","preview")" class="withLock form"&gt;
+      &lt;div id="blocklyDiv"&gt;&lt;/div&gt;
+      &lt;div id="textareaDiv"&gt;
+        &lt;textarea id="Blockly.Code.BlocklyClass_0_content" name="Blockly.Code.BlocklyClass_0_content" readonly&gt;$!{escapetool.xml($doc.getObject('Blockly.Code.BlocklyClass').getProperty('content').value)}&lt;/textarea&gt;
+      &lt;/div&gt;
+
+        &lt;input type="hidden" name="Blockly.Code.BlocklyClass_0_code" id="Blockly.Code.BlocklyClass_0_code" value="$!{escapetool.xml($doc.getObject('Blockly.Code.BlocklyClass').getProperty('code').value)}"&gt;&lt;/input&gt;
+        &lt;input type="hidden" name="Blockly.Code.BlocklyClass_0_CodeJS" id="Blockly.Code.BlocklyClass_0_CodeJS" value="$!{escapetool.xml($doc.getObject('Blockly.Code.BlocklyClass').getProperty('CodeJS').value)}"&gt;&lt;/input&gt;
+
+        &lt;xml id="toolbox" style="display: none;"&gt;
+          &lt;category name="Logic" colour="210"&gt;
+            &lt;block type="controls_if"&gt;&lt;/block&gt;
+            &lt;block type="logic_compare"&gt;&lt;/block&gt;
+            &lt;block type="logic_operation"&gt;&lt;/block&gt;
+            &lt;block type="logic_negate"&gt;&lt;/block&gt;
+            &lt;block type="logic_boolean"&gt;&lt;/block&gt;
+            &lt;block type="logic_null"&gt;&lt;/block&gt;
+          &lt;/category&gt;
+          &lt;category name="Loops" colour="120"&gt;
+            &lt;block type="controls_repeat_ext"&gt;
+              &lt;value name="TIMES"&gt;
+                &lt;block type="math_number"&gt;
+                  &lt;field name="NUM"&gt;10&lt;/field&gt;
+                &lt;/block&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="controls_forEach"&gt;&lt;/block&gt;
+          &lt;/category&gt;
+          &lt;category name="Variables" custom="VARIABLE" colour="200"&gt;&lt;/category&gt;
+          &lt;category name="Math" colour="230"&gt;
+            &lt;block type="math_number"&gt;
+              &lt;field name="NUM"&gt;123&lt;/field&gt;
+            &lt;/block&gt;
+            &lt;block type="math_arithmetic"&gt;
+              &lt;value name="A"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;1&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="B"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;1&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="math_round"&gt;
+              &lt;value name="NUM"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;3.1&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="math_modulo"&gt;
+              &lt;value name="DIVIDEND"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;64&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="DIVISOR"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;10&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="math_constrain"&gt;
+              &lt;value name="VALUE"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;50&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="LOW"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;1&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="HIGH"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;100&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="math_random_int"&gt;
+              &lt;value name="FROM"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;1&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="TO"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;100&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="math_random_float"&gt;&lt;/block&gt;
+          &lt;/category&gt;
+          &lt;category name="Text" colour="180"&gt;
+            &lt;block type="text"&gt;&lt;/block&gt;
+            &lt;block type="text_length"&gt;&lt;/block&gt;
+            &lt;block type="text_append"&gt;
+              &lt;value name="TEXT"&gt;
+                &lt;shadow type="text"&gt;&lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="text_print"&gt;&lt;/block&gt;
+            &lt;block type="text_isEmpty"&gt;
+              &lt;value name="VALUE"&gt;
+                &lt;shadow type="text"&gt;
+                  &lt;field name="TEXT"&gt;&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="text_indexOf"&gt;
+              &lt;value name="VALUE"&gt;
+                &lt;block type="variables_get"&gt;
+                  &lt;field name="VAR"&gt;{textVariable}&lt;/field&gt;
+                &lt;/block&gt;
+              &lt;/value&gt;
+              &lt;value name="FIND"&gt;
+                &lt;shadow type="text"&gt;
+                  &lt;field name="TEXT"&gt;abc&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="text_charAt"&gt;
+              &lt;value name="VALUE"&gt;
+                &lt;block type="variables_get"&gt;
+                  &lt;field name="VAR"&gt;{textVariable}&lt;/field&gt;
+                &lt;/block&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="text_getSubstring"&gt;
+              &lt;value name="STRING"&gt;
+                &lt;block type="variables_get"&gt;
+                  &lt;field name="VAR"&gt;{textVariable}&lt;/field&gt;
+                &lt;/block&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="text_changeCase"&gt;
+              &lt;value name="TEXT"&gt;
+                &lt;shadow type="text"&gt;
+                  &lt;field name="TEXT"&gt;abc&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="text_trim"&gt;
+              &lt;value name="TEXT"&gt;
+                &lt;shadow type="text"&gt;
+                  &lt;field name="TEXT"&gt;abc&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+          &lt;/category&gt;
+          &lt;category name="Lists" colour="80"&gt;
+            &lt;block type="lists_create_with"&gt;
+              &lt;mutation items="0"&gt;&lt;/mutation&gt;
+            &lt;/block&gt;
+            &lt;block type="lists_create_with"&gt;&lt;/block&gt;
+            &lt;block type="lists_repeat"&gt;
+              &lt;value name="NUM"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;5&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="lists_length"&gt;&lt;/block&gt;
+            &lt;block type="lists_isEmpty"&gt;&lt;/block&gt;
+            &lt;block type="lists_indexOf"&gt;
+              &lt;value name="VALUE"&gt;
+                &lt;block type="variables_get"&gt;
+                  &lt;field name="VAR"&gt;{listVariable}&lt;/field&gt;
+                &lt;/block&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="lists_getIndex"&gt;
+              &lt;value name="VALUE"&gt;
+                &lt;block type="variables_get"&gt;
+                  &lt;field name="VAR"&gt;{listVariable}&lt;/field&gt;
+                &lt;/block&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="lists_setIndex"&gt;
+              &lt;value name="LIST"&gt;
+                &lt;block type="variables_get"&gt;
+                  &lt;field name="VAR"&gt;{listVariable}&lt;/field&gt;
+                &lt;/block&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="lists_getSublist"&gt;
+              &lt;value name="LIST"&gt;
+                &lt;block type="variables_get"&gt;
+                  &lt;field name="VAR"&gt;{listVariable}&lt;/field&gt;
+                &lt;/block&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="lists_split"&gt;
+              &lt;value name="DELIM"&gt;
+                &lt;shadow type="text"&gt;
+                  &lt;field name="TEXT"&gt;,&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+          &lt;/category&gt;
+          &lt;category name="Color" colour="30"&gt;
+            &lt;block type="colour_picker"&gt;&lt;/block&gt;
+            &lt;block type="colour_random"&gt;&lt;/block&gt;
+            &lt;block type="colour_rgb"&gt;
+              &lt;value name="RED"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;100&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="GREEN"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;50&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="BLUE"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;0&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+            &lt;block type="colour_blend"&gt;
+              &lt;value name="COLOUR1"&gt;
+                &lt;shadow type="colour_picker"&gt;
+                  &lt;field name="COLOUR"&gt;#ff0000&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="COLOUR2"&gt;
+                &lt;shadow type="colour_picker"&gt;
+                  &lt;field name="COLOUR"&gt;#3333ff&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+              &lt;value name="RATIO"&gt;
+                &lt;shadow type="math_number"&gt;
+                  &lt;field name="NUM"&gt;0.5&lt;/field&gt;
+                &lt;/shadow&gt;
+              &lt;/value&gt;
+            &lt;/block&gt;
+          &lt;/category&gt;
+        &lt;/xml&gt;
+      &lt;/form&gt;
+    #end
+  {{/html}}
+{{/velocity}}</content>
+  <object>
+    <name>Blockly.Code.BlocklyEditSheet</name>
+    <number>0</number>
+    <className>XWiki.JavaScriptExtension</className>
+    <guid>3fb19cc1-a938-49cf-afdb-7691cdc84a18</guid>
+    <class>
+      <name>XWiki.JavaScriptExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <contenttype>PureText</contenttype>
+        <disabled>0</disabled>
+        <editor>PureText</editor>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <property>
+      <cache>default</cache>
+    </property>
+    <property>
+      <code>require.config({
+  paths: {
+    'blockly-comp': '$services.webjars.url("org.xwiki.contrib:blockly", "blockly_compressed.js")',
+    'blocks-comp': '$services.webjars.url("org.xwiki.contrib:blockly", "blocks_compressed.js")',
+    'vel-comp': '$services.webjars.url("org.xwiki.contrib:blockly", "velocity_compressed.js")',
+    'js-comp': '$services.webjars.url("org.xwiki.contrib:blockly", "javascript_compressed.js")',
+    'media': '#removeJsSuffix($services.webjars.url("org.xwiki.contrib:blockly", "media/"))',
+    'jquery': '$services.webjars.url("jquery", "jquery.js")',
+    'bootstrap': '$services.webjars.url("bootstrap", "js/bootstrap.js")',
+    'blockly-msg-en': '$services.webjars.url("org.xwiki.contrib:blockly", "msg/js/en.js")'
+  },
+  shim: {
+    'blocks-comp': ['blockly-comp'],
+    'bootstrap' : ['jquery'],
+    'blockly-msg-en': ['blockly-comp'],
+    'vel-comp': ['blockly-comp'],
+    'js-comp': ['vel-comp']
+  }
+});
+
+
+require(['blockly-comp', 'blocks-comp', 'blockly-msg-en', 'vel-comp', 'jquery', 'media', 'bootstrap', 'js-comp','blockly-accessible'], function(blockly, blocks, msg, vel, $, media, bootstrap, js, access) {
+  var demoWorkspace = Blockly.inject('blocklyDiv',
+  {media: media,
+  toolbox: document.getElementById('toolbox')});
+  $( document ).ready(function() {
+      var xmlText = $('#Blockly\\.Code\\.BlocklyClass_0_code').val();
+      $("[title='Maximize']").hide();
+      var xml = Blockly.Xml.textToDom(xmlText);
+      Blockly.Xml.appendDomToWorkspace(xml, demoWorkspace);
+  });
+
+    $('#myTabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      if(e.target['id']=='source-tab'){
+        $('#blocklyDiv').hide();
+        $("[title='Maximize']").show();
+        Blockly.Velocity.INFINITE_LOOP_TRAP = null;
+        var code = Blockly.Velocity.workspaceToCode(demoWorkspace), element = $('#Blockly\\.Code\\.BlocklyClass_0_content');
+        element.val(code);
+        element.show();
+      }
+      else if(e.target['id']=='blockly-tab'){
+        $('#blocklyDiv').show();
+        $("[title='Maximize']").hide();
+        $('#Blockly\\.Code\\.BlocklyClass_0_content').hide();
+      }
+    })
+    $(document).on('xwiki:actions:beforeSave', function() {
+      var xml = Blockly.Xml.workspaceToDom(demoWorkspace);
+      var xml_text = Blockly.Xml.domToText(xml);
+      var code = Blockly.Velocity.workspaceToCode(demoWorkspace);
+      var codeJS = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      console.log(codeJS);
+      $('#Blockly\\.Code\\.BlocklyClass_0_code').val(xml_text);
+      $('#Blockly\\.Code\\.BlocklyClass_0_content').val(code);
+      $('#Blockly\\.Code\\.BlocklyClass_0_CodeJS').val(codeJS);
+  });
+});
+</code>
+    </property>
+    <property>
+      <name>Blockly Editor</name>
+    </property>
+    <property>
+      <parse>1</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+  <object>
+    <name>Blockly.Code.BlocklyEditSheet</name>
+    <number>0</number>
+    <className>XWiki.StyleSheetExtension</className>
+    <guid>7309da7c-e991-4400-ad2b-bfc9b327fc77</guid>
+    <class>
+      <name>XWiki.StyleSheetExtension</name>
+      <customClass/>
+      <customMapping/>
+      <defaultViewSheet/>
+      <defaultEditSheet/>
+      <defaultWeb/>
+      <nameField/>
+      <validationScript/>
+      <cache>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>cache</name>
+        <number>5</number>
+        <prettyName>Caching policy</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>long|short|default|forbid</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </cache>
+      <code>
+        <contenttype>PureText</contenttype>
+        <disabled>0</disabled>
+        <editor>PureText</editor>
+        <name>code</name>
+        <number>2</number>
+        <prettyName>Code</prettyName>
+        <rows>20</rows>
+        <size>50</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+      </code>
+      <contentType>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>contentType</name>
+        <number>6</number>
+        <prettyName>Content Type</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>CSS|LESS</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </contentType>
+      <name>
+        <disabled>0</disabled>
+        <name>name</name>
+        <number>1</number>
+        <prettyName>Name</prettyName>
+        <size>30</size>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+      </name>
+      <parse>
+        <disabled>0</disabled>
+        <displayFormType>select</displayFormType>
+        <displayType>yesno</displayType>
+        <name>parse</name>
+        <number>4</number>
+        <prettyName>Parse content</prettyName>
+        <unmodifiable>0</unmodifiable>
+        <classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+      </parse>
+      <use>
+        <cache>0</cache>
+        <disabled>0</disabled>
+        <displayType>select</displayType>
+        <multiSelect>0</multiSelect>
+        <name>use</name>
+        <number>3</number>
+        <prettyName>Use this extension</prettyName>
+        <relationalStorage>0</relationalStorage>
+        <separator> </separator>
+        <separators>|, </separators>
+        <size>1</size>
+        <unmodifiable>0</unmodifiable>
+        <values>currentPage|onDemand|always</values>
+        <classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+      </use>
+    </class>
+    <property>
+      <cache>default</cache>
+    </property>
+    <property>
+      <code>#blocklyDiv {
+    height: 600px;
+    width: 100%;
+    padding: 25px 0px;
+}
+
+#Blockly\.Code\.BlocklyClass_0_content{
+  display:none;
+   height: 600px;
+   width: 600px;
+}
+
+#textareaDiv {
+    padding: 25px 150px;
+}</code>
+    </property>
+    <property>
+      <contentType>CSS</contentType>
+    </property>
+    <property>
+      <name>Blockly CSS</name>
+    </property>
+    <property>
+      <parse>0</parse>
+    </property>
+    <property>
+      <use>onDemand</use>
+    </property>
+  </object>
+</xwikidoc>

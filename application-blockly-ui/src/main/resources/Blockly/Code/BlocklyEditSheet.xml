@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
@@ -291,6 +292,12 @@
                 &lt;/shadow&gt;
               &lt;/value&gt;
             &lt;/block&gt;
+          &lt;/category&gt;
+          &lt;category name="XWiki Bindings" colour="50"&gt;
+            &lt;block type="envvar_text"&gt;&lt;/block&gt;
+            &lt;block type="envvar_constant"&gt;&lt;/block&gt;
+            &lt;block type="envvar_attrib"&gt;&lt;/block&gt;
+            &lt;block type="envvar_method"&gt;&lt;/block&gt;
           &lt;/category&gt;
         &lt;/xml&gt;
       &lt;/form&gt;

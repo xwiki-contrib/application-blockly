@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<package>
+<infos>
+<name>Blockly - UI</name>
+<description>Adds a new document template based on Google Blockly</description>
+<licence></licence>
+<author>XWiki.Admin</author>
+<extensionId>org.xwiki.contrib:application-blockly-ui</extensionId>
+<version>0.7-SNAPSHOT</version>
+<backupPack>false</backupPack>
+</infos>
+<files>
+<file language="" defaultAction="0">Blockly.Code.BlocklyTemplate</file>
+<file language="" defaultAction="0">Blockly.Code.BlocklyViewCodeSheet</file>
+<file language="" defaultAction="0">Blockly.Code.BlocklyExecuteCodeSheet</file>
+<file language="" defaultAction="0">Blockly.Code.BlocklyClass</file>
+<file language="" defaultAction="0">Blockly.Code.BlocklyEditSheet</file>
+<file language="" defaultAction="0">Blockly.Code.BlocklyViewSheet</file>
+<file language="" defaultAction="0">Blockly.Code.WebHome</file>
+<file language="" defaultAction="0">Blockly.WebHome</file>
+<file language="" defaultAction="0">Blockly.Code.BlocklySheet</file>
+<file language="" defaultAction="0">Blockly.Code.BlocklyTemplateProvider</file>
+</files>
+</package>
