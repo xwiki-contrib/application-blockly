@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
  * See the NOTICE file distributed with this work for additional
  * information regarding copyright ownership.
@@ -78,6 +79,20 @@
               &lt;/value&gt;
             &lt;/block&gt;
             &lt;block type="controls_forEach"&gt;&lt;/block&gt;
+          &lt;/category&gt;
+          &lt;category name="Queries" colour="50"&gt;
+            &lt;block type="queries_execute"&gt;&lt;/block&gt;
+            &lt;block type="queries_not"&gt;&lt;/block&gt;
+            &lt;block type="queries_distinct"&gt;&lt;/block&gt;
+            &lt;block type="queries_object"&gt;&lt;/block&gt;
+            &lt;block type="queries_getxobject"&gt;&lt;/block&gt;
+            &lt;block type="queries_main"&gt;&lt;/block&gt;
+            &lt;block type="queries_args"&gt;&lt;/block&gt;
+            &lt;block type="queries_as"&gt;&lt;/block&gt;
+            &lt;block type="queries_comparison"&gt;&lt;/block&gt;
+            &lt;block type="queries_andor"&gt;&lt;/block&gt;
+            &lt;block type="queries_like"&gt;&lt;/block&gt;
+            &lt;block type="queries_order"&gt;&lt;/block&gt;
           &lt;/category&gt;
           &lt;category name="Variables" custom="VARIABLE" colour="200"&gt;&lt;/category&gt;
           &lt;category name="Math" colour="230"&gt;
